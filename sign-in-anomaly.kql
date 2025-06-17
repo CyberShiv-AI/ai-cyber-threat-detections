@@ -1,0 +1,5 @@
+SigninLogs
+| where ConditionalAccessStatus == "failure"
+| summarize FailedAttempts = count() by UserPrincipalName, bin(TimeGenerated, 1h)
+| where FailedAttempts > 5
+
