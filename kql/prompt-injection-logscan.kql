@@ -1,0 +1,3 @@
+CustomAppLogs
+| where InputText contains_any ("--system", "ignore previous", "###")
+| project User, Timestamp, InputText
